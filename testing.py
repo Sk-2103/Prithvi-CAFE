@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Prithvi-CAFE Terratorch-style testing script
-
 What it does:
 - Downloads Prithvi-CAFE.tar.gz from Google Drive (if missing)
 - Extracts into ./Prithvi-CAFE (if missing)
 - Auto-detects:
     * checkpoint (.ckpt)
     * dataset root containing img_dir/test and ann_dir/test
-- Builds IgnoreLabelSegTask (same structure as training, with ignore_index=-1)
-- Uses Lightning Trainer + trainer.test(...) to run Terratorch metrics
 - Prints the full test metrics dict (same keys as your training code)
 """
 
@@ -447,7 +443,7 @@ class IgnoreLabelSegTask(SemanticSegmentationTask):
             logits, y, self.ignore_index
         )
         if logits_valid is None:
-            # No valid pixels — return zero loss
+            # No valid pixels Â— return zero loss
             return logits.new_tensor(0.0), valid_mask
 
         loss_name = str(self.hparams.get("loss", "cross_entropy")).lower()
@@ -616,3 +612,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
