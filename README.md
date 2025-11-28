@@ -61,6 +61,25 @@ dataset_root/
 python main.py
 ```
 
+🧪 Testing Prithvi-CAFE on Sen1Flood11
+
+We provide access to trained weights and the Sen1Flood11 test data, enabling fully automated testing of the model and reproduction of the reported results.
+The same model can be directly tested on similar flood-mapping datasets with only minor path/config modifications.
+
+The model was evaluated on the Sen1Flood11 test split using the Lightning test loop, yielding the following metrics:
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Testing DataLoader 0: 100%|█████████████████████████████████████████████████| 23/23 [00:26<00:00,  0.88it/s]
+
+
+| Metric                                | Value      |
+| ------------------------------------- | ---------- |
+| `test/Multiclass_Accuracy`            | **0.9778** |
+| `test/Multiclass_F1_Score`            | **0.9778** |
+| `test/Multiclass_Jaccard_Index`       | **0.9046** |
+| `test/Multiclass_Jaccard_Index_Micro` | **0.9566** |
+| `test/loss`                           | **0.0815** |
+
 ---
 
 # 🔍 Inference Example
@@ -89,6 +108,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
