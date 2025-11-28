@@ -60,7 +60,7 @@ dataset_root/
 ```bash
 python main.py
 ```
-
+---
 #🧪 **Testing Prithvi-CAFE on Sen1Flood11**
 
 We provide access to trained weights and the Sen1Flood11 test data, enabling fully automated testing of the model and reproduction of the reported results.
@@ -68,18 +68,20 @@ The same model can be directly tested on similar flood-mapping datasets with onl
 
 The model was evaluated on the Sen1Flood11 test split using the Lightning test loop, yielding the following metrics:
 
-LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Testing DataLoader 0: 100%|█████████████████████████████████████████████████| 23/23 [00:26<00:00,  0.88it/s]
-
-
-| Metric                                | Value      |
-| ------------------------------------- | ---------- |
-| `test/Multiclass_Accuracy`            | **0.9778** |
-| `test/Multiclass_F1_Score`            | **0.9778** |
-| `test/Multiclass_Jaccard_Index`       | **0.9046** |
-| `test/Multiclass_Jaccard_Index_Micro` | **0.9566** |
-| `test/loss`                           | **0.0815** |
-
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃             Test metric             ┃            DataLoader 0             ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│      test/Multiclass_Accuracy       │         0.9778400659561157          │
+│      test/Multiclass_F1_Score       │         0.9778400659561157          │
+│    test/Multiclass_Jaccard_Index    │         0.9045928716659546          │
+│ test/Multiclass_Jaccard_Index_Micro │         0.9566410779953003          │
+│              test/loss              │         0.08145349472761154         │
+│      test/multiclassaccuracy_0      │         0.9902576208114624          │
+│      test/multiclassaccuracy_1      │         0.8909727334976196          │
+│    test/multiclassjaccardindex_0    │         0.9750612378120422          │
+│    test/multiclassjaccardindex_1    │         0.8341244459152222          │
+└─────────────────────────────────────┴─────────────────────────────────────┘
 ---
 
 # 🔍 Inference Example
@@ -108,6 +110,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
