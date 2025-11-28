@@ -16,7 +16,7 @@ Prithvi-CAFE integrates:
 # 📦 Installation
 
 ```bash
-git clone https://github.com/<your_username>/<your_repo>.git
+git clone https://github.com/Sk-2103/Prithvi-CAFE.git
 cd <your_repo>
 
 pip install -r requirements.txt
@@ -89,4 +89,5 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
