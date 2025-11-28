@@ -89,6 +89,8 @@ Testing DataLoader 0: 100%|█████████████████�
 | Accuracy               | 0.9903         | 0.8910    |
 | IoU (Jaccard Index)    | 0.9751         | 0.8341    |
 
+Model weight and test data link: https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link 
+
 ---
 
 
@@ -118,6 +120,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
