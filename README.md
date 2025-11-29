@@ -64,6 +64,15 @@ python main.py
 
 python testing.py
 
+What it does:
+- Downloads Prithvi-CAFE.tar.gz from Google Drive (if missing)
+- Extracts into ./Prithvi-CAFE (if missing)
+- Auto-detects:
+    * checkpoint (.ckpt)
+    * dataset root containing img_dir/test and ann_dir/test
+- Prints the full test metrics dict (same keys as your training code)
+"""
+
 ---
 ### 📊 Full Test Metrics (Sen1Flood11)
 
@@ -76,7 +85,6 @@ Model weight and test data link: https://drive.google.com/file/d/1QNefJQrlxXVwcL
 
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Testing DataLoader 0: 100%|█████████████████████████████████████████████████| 23/23 [00:26<00:00,  0.88it/s]
-
 
 #### **Global Metrics**
 
@@ -145,6 +153,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
