@@ -60,6 +60,10 @@ dataset_root/
 ```bash
 python main.py
 ```
+#  Testing
+
+python testing.py
+
 ---
 ### 📊 Full Test Metrics (Sen1Flood11)
 
@@ -67,6 +71,8 @@ We provide access to trained weights and the Sen1Flood11 test data, enabling ful
 The same model can be directly tested on similar flood-mapping datasets with only minor path/config modifications.
 
 The model was evaluated on the Sen1Flood11 test split using the Lightning test loop, yielding the following metrics:
+
+Model weight and test data link: https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link 
 
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Testing DataLoader 0: 100%|█████████████████████████████████████████████████| 23/23 [00:26<00:00,  0.88it/s]
@@ -112,17 +118,6 @@ The model was tested on a geographically distinct flood event not used during tr
 | Accuracy               | 0.9891         | 0.8608    |
 | IoU (Jaccard Index)    | 0.9638         | 0.8137    |
 
----
-
-<details>
-<summary>📄 Raw Lightning Test Log (optional)</summary>
-
-
-
-Model weight and test data link: https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link 
-
----
-
 
 # 🔍 Inference Example
 
@@ -150,6 +145,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
