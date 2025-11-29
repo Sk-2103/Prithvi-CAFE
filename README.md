@@ -7,7 +7,7 @@ The **Prithvi-CAFE** framework introduces a powerful *adaptive hybrid encoder* t
 Prithvi-CAFE integrates:
 
 - 🌍 **Prithvi-EO-2.0 (600M) backbone with lightweight Adapters**  
-- 🔁 **Multi-scale multi-stage fusion of ViT + CNN via FAT-Net**  
+- 🔁 **Multi-scale multi-stage fusion of ViT + CNN **  
 - 🧠 **Terratorch-compatible custom UPerNet decoders**  
 - 📡 **Support for any number of input channels (Sentinel-1/2, PlanetScope, DEM, etc.)**  
 - ⚡ **End-to-end PyTorch Lightning training + testing pipeline**
@@ -78,7 +78,7 @@ Testing DataLoader 0: 100%|█████████████████�
 |---------------------------------|-----------|
 | Multiclass Accuracy             | **0.9778** |
 | Multiclass F1 Score             | **0.9778** |
-| Multiclass Jaccard Index (mIoU) | **0.9046** |
+| Multiclass Jaccard Index (mIoU) | **0.9056** |
 | Micro Jaccard Index             | **0.9566** |
 | Test Loss                       | **0.0815** |
 
@@ -87,7 +87,37 @@ Testing DataLoader 0: 100%|█████████████████�
 | Metric                 | Background (0) | Flood (1) |
 |------------------------|----------------|-----------|
 | Accuracy               | 0.9903         | 0.8910    |
-| IoU (Jaccard Index)    | 0.9751         | 0.8341    |
+| IoU (Jaccard Index)    | 0.9771         | 0.8341    |
+
+
+### 🌎 Full Test Metrics — Geographically Held-Out Test Site (Bolivia)
+
+This evaluation measures how well **Prithvi-CAFE** generalizes to a completely unseen geographic region (Bolivia).  
+The model was tested on a geographically distinct flood event not used during training.
+
+#### **Global Metrics**
+
+| Metric                           | Value     |
+|---------------------------------|-----------|
+| Multiclass Accuracy             | **0.9687** |
+| Multiclass F1 Score             | **0.9687** |
+| Multiclass Jaccard Index (mIoU) | **0.8888** |
+| Micro Jaccard Index             | **0.9394** |
+| Test Loss                       | **0.0807** |
+
+#### **Per-Class Metrics**
+
+| Metric                 | Background (0) | Flood (1) |
+|------------------------|----------------|-----------|
+| Accuracy               | 0.9891         | 0.8608    |
+| IoU (Jaccard Index)    | 0.9638         | 0.8137    |
+
+---
+
+<details>
+<summary>📄 Raw Lightning Test Log (optional)</summary>
+
+
 
 Model weight and test data link: https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link 
 
@@ -115,11 +145,12 @@ preds = torch.argmax(logits, dim=1)
 ### Prithvi-CAFE = Prithvi Transformer + CNN + Adaptive Fusion
 
 - Prithvi-EO-2.0 extracts global contextual features  
-- Residual CNN + CBAM captures spatial/local texture cues  
-- FAT-Net aligns and fuses multi-scale features  
+- Residual CNN + CAM captures spatial/local texture cues  
+- M2FAF aligns and fuses multi-scale features  
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
