@@ -61,7 +61,7 @@ dataset_root/
 python main.py
 ```
 # 📊 Download model weight (Sen1Flood11)
-Model weight and test data link: (https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link)
+Model weight and test data link: [Download Model Weights (Google Drive)](https://drive.google.com/file/d/1QNefJQrlxXVwcLManl4bIL8Lb1Dontpu/view?usp=drive_link)
 
 
 #  Testing
@@ -158,6 +158,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
