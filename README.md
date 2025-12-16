@@ -12,6 +12,9 @@ Prithvi-CAFE integrates:
 - 📡 **Support for any number of input channels (Sentinel-1/2, PlanetScope, DEM, etc.)**  
 - ⚡ **End-to-end PyTorch Lightning training + testing pipeline**
 
+## Model Architecture
+
+![Block Diagram](assets/block_png.jpg)
 
 # 📦 Installation
 
@@ -158,6 +161,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
