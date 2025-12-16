@@ -14,7 +14,7 @@ Prithvi-CAFE integrates:
 
 ## Model Architecture
 
-![Block Diagram](assets/block_png.jpg)
+![Block Diagram](block_png.jpeg)
 
 # 📦 Installation
 
@@ -161,6 +161,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
