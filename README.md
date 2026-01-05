@@ -1,6 +1,7 @@
 
 # Prithvi-Complimentary Adaptive Fusion Encoder (CAFE)
 ### Unlocking the full potential of multi-band satellite imagery for flood inundation mapping
+**Accepted at CV4EO @ WACV 2026**
 
 The **Prithvi-CAFE** framework introduces a powerful *adaptive hybrid encoder* that fuses **Transformer-based global reasoning (Prithvi-EO-2.0)** with **CNN-based local spatial sensitivity**, enabling high-resolution, reliable flood inundation mapping across multi-channel/sensor inputs.
 
@@ -161,6 +162,7 @@ preds = torch.argmax(logits, dim=1)
 - Decoder reconstructs dense segmentation at full resolution  
 
 ---
+
 
 
 
